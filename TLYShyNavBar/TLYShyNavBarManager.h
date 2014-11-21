@@ -52,6 +52,9 @@
  */
 @property (nonatomic, getter = isAlphaFadeEnabled) BOOL alphaFadeEnabled;
 
+// Andrii Novoselskyi fix
+- (void)updateNavBarControllerYOffset:(CGFloat)deltaY;
+
 @end
 
 

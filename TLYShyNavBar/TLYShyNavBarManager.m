@@ -265,6 +265,13 @@ static inline CGFloat AACStatusBarHeight()
                      }];
 }
 
+#pragma mark -
+
+- (void)updateNavBarControllerYOffset:(CGFloat)deltaY
+{
+    [self.navBarController updateYOffset:deltaY];
+}
+
 #pragma mark - public methods
 
 - (void)setExtensionView:(UIView *)view
