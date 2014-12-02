@@ -262,6 +262,14 @@ static inline CGFloat AACStatusBarHeight()
     [UIView animateWithDuration:0.2
                      animations:^{
                          self.scrollView.contentOffset = newContentOffset;
+                     } completion:^(BOOL finished) {
+                         CGPoint maxContentOffset = CGPointMake(0, self.scrollView.contentSize.height - (self.scrollView.frame.size.height - self.scrollView.contentInset.bottom));
+                         if (newContentOffset.y > maxContentOffset.y)
+                         {
+                             [UIView animateWithDuration:0.2 animations:^{
+                                 [self.scrollView setContentOffset:maxContentOffset];
+                             }];
+                         }
                      }];
 }
 
