@@ -70,7 +70,10 @@ const CGFloat contractionVelocity = 300.f;
         
         if (!isBackgroundView && !isViewHidden)
         {
+            NSInteger tag = view.tag;
+            [view setTag:666];
             view.alpha = alpha;
+            [view setTag:tag];
         }
     }
 }
